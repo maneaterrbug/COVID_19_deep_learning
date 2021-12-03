@@ -29,7 +29,7 @@ I developed two baseline models for benchmarking. For the first, I built a rando
 
 To see how a convolutional NN model might perform on image data of this kind, I built a custom baseline convolutional NN using the Keras Sequential model. This model was composed of 3 convolutional blocks, each with 2 Conv2d layers (with number of filters equal to 16, 32, and 64 for each respective block, a kernel size of 3, and relu activation),2 40% dropout layers, and a pooling layer. Finally the output of the convolutional blocks was fed into a fully connected block with 1 flattening layer and 2 20 node dense layers before being output from a 1 node output layer using sigmoid activation.
 
-![]('../resources/nn_layers.png')
+![]('/../resources/nn_layers.png')
 
 Despite the model's relative depth, it proved computationally costly to train, and was not feasible to train on a high number of epochs. Ultimately, this model performed best around 30 epochs of training, and predicted COVID-19 presence on the validation set with 63.9% accuracy.
 
@@ -55,20 +55,5 @@ Because the results of the baseline CNN showed promising gains in accuracy, but 
 
 ## Communication
 
-Despite initial CNN modeling proving 
+After training and tuning the CNN model, it was used to predict on the hold-out test set, for which it achieved a predictive accuracy of 72.12%. This drop-off in accuracy between predicting on the train and val sets compared with the test set may be indicative of a lack of generizabiity of the current model. To counter this, I believe that collecting a larger set of images and employing image augmentation on all images to pad out the set may help to prevent any overfitting the current model is susceptible to. In addition, an increased focus on image pre-processing may lead to gains in image information richness and general predictive accuracy. Ultimately, this model in its current state is NOT a functional diagnostic model, but rather can be used for the purpose of developing further models.
 
-
-
-Future work: 
-- preprocessing
-  - image augmentation
-  - image sizing/standardizing
-  - bringing in additional scans
-
-
-@article{zhao2020COVID-CT-Dataset,
-  title={COVID-CT-Dataset: a CT scan dataset about COVID-19},
-  author={Zhao, Jinyu and Zhang, Yichen and He, Xuehai and Xie, Pengtao},
-  journal={arXiv preprint arXiv:2003.13865}, 
-  year={2020}
-}

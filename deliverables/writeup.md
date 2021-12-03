@@ -2,13 +2,13 @@
 Matt Ryan
 
 ## Abstract
----
 
+With the onset of the COVID-19 pandemic, the international community has been forced to quickly adapt to a new and rapidly evolving public health crisis, both on scientific and policy/administrative levels. Medically, vaccine research was fully resourced and expedited, and development and production of COVID testing kits were fast-tracked. Even so, despite our increasing ability to immunize against and test for the existence of COVID-19 infection, there is still much not fully understood and about the virus and its affects on the body. As such, in this project I explored the potential for machine learning models to learn from and interpret medical imaging data. 
 
 ## Design
----
 
----
+As an initial approach, I decided to examine lung CT-scan data and employ neural network modelling to attempt to accurately predict the presence, or lack thereof, of COVID-19 in a patient's lungs. Because the data being used in training and predicting is in image format and is relatively small in size, a convolutional neural network approach was chosen before ultimately using transfer learning. Although the initial approach is a simply binary prediction on COVID-19 positive or negative lungs, a future goal is to use the model to classify CT-scans of lungs in a variety of health states, with an ultimate goal of finding connections between COVID-19 diagnoses and other similar diagnoses.
+
 ## Data
 
 The data used in this project consists of 746 CT-scans of lungs in the form of png files, 349 of which were representative of clinical findings of COVID-19 (the scans were taken from a total of 216 patients) and the remainder from COVID-19 negative lungs. The images were not standard sized, and despite appearing grey-scale were 3-channel. The image data was collected and pre-processed by a team of researchers from University of California San Diego and University of California Berkley; the data can be found on a github repository [here](https://github.com/UCSD-AI4H/COVID-CT), and the team's discussion of collection and processing methodologies can be found in [this paper](https://arxiv.org/pdf/2003.13865.pdf).
